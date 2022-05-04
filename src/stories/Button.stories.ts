@@ -1,9 +1,26 @@
 import '../elements/Button';
 import { html } from "lit";
+import { Story } from "@storybook/web-components";
 
-export default {
-  title: 'my-button',
-  component: 'my-button',
+interface IButton {
+  text: string
+  primary: boolean,
 }
 
-export const Default = () => html`<my-button text="Click me!"></my-button>`;
+export default {
+  title: 'Button',
+  component: 'custom-button',
+  parameters: {
+    actions: {
+      handles: ['click'],
+    },
+  },
+}
+
+const Template: Story<IButton> = (args: IButton) => html`<custom-button text=${args.text}></custom-button>`;
+
+export const Default = Template.bind({});
+Default.args = {
+  text: 'Click me!',
+  primary: true,
+}
