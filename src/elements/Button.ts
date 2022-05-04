@@ -1,5 +1,7 @@
 import { LitElement, html, css } from "lit";
+import { customElement, property } from "lit/decorators.js";
 
+@customElement('my-button')
 export class Button extends LitElement {
   static styles = css`
     button {
@@ -11,20 +13,9 @@ export class Button extends LitElement {
     }
   `;
 
-  static get properties() {
-    return {
-      text: { type: String }
-    }
-  }
-
-  constructor() {
-    super();
-    this.text = this.getAttribute('text');
-  }
+  @property({ type: String }) text;
 
   render () {
     return html`<button>${this.text}</button>`;
   }
 }
-
-customElements.define('my-button', Button);
