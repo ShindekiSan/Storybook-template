@@ -25,19 +25,19 @@ export class CustomInput extends LitElement {
     }
 
     .primary {
-      border: 2px solid grey;
+      border: 4px solid grey;
     }
 
     .error {
-      border: 2px solid red;
+      border: 4px solid red;
     }
 
     .success {
-      border: 2px solid green;
+      border: 4px solid green;
     }
     
     .warning {
-      border: 2px solid orange;
+      border: 4px solid orange;
     }
   `};
 }
