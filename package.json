@@ -1,6 +1,6 @@
 {
   "name": "lit-ui-lib",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "./dist/index.js",
   "scripts": {
@@ -26,5 +26,7 @@
     "webpack": "^5.72.0",
     "webpack-cli": "^4.9.2"
   },
-  "files": ["dist"]
+  "files": [
+    "dist"
+  ]
 }
