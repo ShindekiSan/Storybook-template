@@ -1,0 +1,44 @@
+import { Story, Canvas, Meta, Props } from "@storybook/addon-docs";
+import { html } from "lit";
+
+import '../elements/Button';
+
+<Meta title="MDX/Button" component='custom-button' />
+
+# Button
+
+Button is the primary component. It has three possible variants.
+
+- [Contained](#contained)
+- [Outlined](#outlined)
+- [Text](#text)
+
+## Examples
+
+### Contained
+
+<Canvas>
+  <Story name="Contained">
+    <custom-button variant="contained" text="Click me!"></custom-button>
+  </Story>
+</Canvas>
+
+### Outlined
+
+<Canvas>
+  <Story name="Outlined">
+    <custom-button variant="outlined" text="Click me!"></custom-button>
+  </Story>
+</Canvas>
+
+### Text
+
+<Canvas>
+  <Story name="Text">
+    <custom-button variant="text" text="Click me!"></custom-button>
+  </Story>
+</Canvas>
+
+## API
+
+<Props of="custom-button" />

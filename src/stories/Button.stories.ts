@@ -1,11 +1,11 @@
 import { html } from "lit";
-import { Story } from "@storybook/web-components";
+import { Story, Meta } from "@storybook/web-components";
 
 import '../elements/Button';
 
 interface IButton {
   text: string
-  primary: boolean,
+  variant: string
 }
 
 export default {
@@ -16,12 +16,18 @@ export default {
       handles: ['click'],
     },
   },
-}
+  argTypes: {
+    variant: {
+      options: ['contained', 'outlined', 'text'],
+      control: { type: 'radio' },
+    },
+  },
+} as Meta
 
-const Template: Story<IButton> = (args: IButton) => html`<custom-button text=${args.text}></custom-button>`;
+const Template: Story<IButton> = (args: IButton) => html`<custom-button variant=${args.variant} text=${args.text}></custom-button>`;
 
 export const Default = Template.bind({});
 Default.args = {
   text: 'Click me!',
-  primary: true,
+  variant: 'contained',
 }
