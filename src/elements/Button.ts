@@ -13,7 +13,7 @@ export class Button extends LitElement {
     }
   `;
 
-  @property({ type: String }) text;
+  @property({ type: String }) text: string;
 
   render () {
     return html`<button>${this.text}</button>`;
