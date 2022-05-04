@@ -1,20 +1,27 @@
 import { html } from "lit";
-import { Story } from "@storybook/web-components"
+import { Story } from "@storybook/web-components";
 
 import '../elements/Button';
 
-export default {
-  title: 'Button',
-  component: 'my-button',
-}
-
 interface IButton {
   text: string
+  primary: boolean,
 }
 
-const Tamplate: Story<IButton> = (args: IButton) => html`<my-button text=${args.text}></my-button>`
+export default {
+  title: 'Button',
+  component: 'custom-button',
+  parameters: {
+    actions: {
+      handles: ['click'],
+    },
+  },
+}
 
-export const Default = Tamplate.bind({});
+const Template: Story<IButton> = (args: IButton) => html`<custom-button text=${args.text}></custom-button>`;
+
+export const Default = Template.bind({});
 Default.args = {
-  text: "some"
+  text: 'Click me!',
+  primary: true,
 }
