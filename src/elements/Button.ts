@@ -41,7 +41,7 @@ export class CustomButton extends LitElement {
   text: string;
 
   @property()
-  variant: IButtonVariant;
+  variant: IButtonVariant = "contained";
 
   render () {
     return html`<button id=${this.variant}>${this.text}</button>`;
