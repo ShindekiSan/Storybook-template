@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"strict": true,
+		"keyofStringsOnly": true,
+		"skipLibCheck": true,
+		"resolveJsonModule": true,
+    "module": "esnext",
+    "target": "es2016",
+		"experimentalDecorators": true,
+  }
+}
