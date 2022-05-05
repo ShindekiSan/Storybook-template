@@ -9,7 +9,7 @@ interface IInput {
 }
 
 export default {
-  title: 'Input',
+  title: 'Design System/Components/Input',
   component: 'custom-input',
   parameters: {
     componentSubtitle:
@@ -31,16 +31,16 @@ export default {
       control: { type: 'select' },
       default: 'primary',
       table: {
-        type: {summary: ['primary', 'error', 'success', 'warning']}
+        type: { summary: ['primary', 'error', 'success', 'warning'] }
       },
-    }
+    },
   }
 }
 
 const Template: Story<IInput> = (args: IInput) => html`<custom-input placeholder=${args.placeholder} borderColor=${args.borderColor}></custom-input>`;
 
-export const Default = Template.bind({});
-Default.args = {
+export const Input = Template.bind({});
+Input.args = {
   placeholder: 'Text something...',
   borderColor: 'primary'
 }

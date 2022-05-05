@@ -35,6 +35,20 @@ export class CustomButton extends LitElement {
       background: none;
       color: #4e8bfc;
     }
+    #text:hover {
+      background-color: rgba(78, 139, 252, 0.1);
+      transition: background-color 0.3s ease-in-out;
+    }
+    #outlined:hover {
+      background-color: rgba(78, 139, 252, 0.1);
+      border-color: rgba(78, 139, 252, 0.5);
+      transition: 0.3s ease-in-out;
+    }
+    #contained:hover {
+      background-color: rgba(78, 139, 252, 0.7);
+      border-color: rgba(78, 139, 252, 0.5);
+      transition: 0.3s ease-in-out;
+    }
   `;
 
   @property()
@@ -44,6 +58,10 @@ export class CustomButton extends LitElement {
   variant: IButtonVariant = "contained";
 
   render () {
-    return html`<button id=${this.variant}>${this.text}</button>`;
+    return html`
+      ${this.hasAttribute('disabled')
+      ? html`
+        <button id=${this.variant} disabled>${this.text}</button>
+      ` : html`<button id=${this.variant}>${this.text}</button>`}`;
   }
 }
