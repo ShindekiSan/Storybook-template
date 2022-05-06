@@ -15,9 +15,6 @@ export default {
   title: 'Design System/Components/Button',
   component: 'custom-button',
   parameters: {
-    docs: {
-      inlineStories: false,
-    },
     actions: {
       handles: ['click'],
     },

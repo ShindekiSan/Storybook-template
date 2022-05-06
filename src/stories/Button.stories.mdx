@@ -1,10 +1,10 @@
 import { html } from 'lit';
-import { Meta, Preview, Story, ArgTypes } from '@storybook/addon-docs';
+import { Meta, Preview, Story, ArgsTable } from '@storybook/addon-docs';
 
 import '../elements/Button';
 
 <Meta
-  title="Design System/Documentation"
+  title="Design System/Documentation/Button"
   component='custom-button'
   argTypes={{
     variant: {
@@ -34,6 +34,11 @@ import '../elements/Button';
       defaultValue: { summary: 'false' },
     },
   }}
+  parameters={{
+    actions: {
+      handles: ['click'],
+    },
+  }}
 />
 
 export const Template = args => {
@@ -45,11 +50,11 @@ export const Template = args => {
 
 # Button
 
-`Button` is the primary component for user to interact with UI.
+`Button` **is the primary component for user to interact with UI.**
 
 <Preview withToolbar>
   <Story
-    name="Button"
+    name="Default"
     args={{
       variant: 'contained',
       disabled: false,
@@ -59,6 +64,10 @@ export const Template = args => {
     {Template.bind({})}
   </Story>
 </Preview>
+
+## Properties
+
+<ArgsTable story="Default" />
 
 ## Examples
 
@@ -66,7 +75,7 @@ export const Template = args => {
 
 <Preview withToolbar>
   <Story
-    name="Contained Button"
+    name="Contained"
     args={{
       variant: 'contained',
       disabled: false,
@@ -77,11 +86,11 @@ export const Template = args => {
   </Story>
 </Preview>
 
-#### Contained (Disabled)
+### Contained (Disabled)
 
 <Preview withToolbar>
   <Story
-    name="Contained (disabled) Button"
+    name="Contained (disabled)"
     args={{
       variant: 'contained',
       disabled: true,
@@ -96,7 +105,7 @@ export const Template = args => {
 
 <Preview withToolbar>
   <Story
-    name="Outlined Button"
+    name="Outlined"
     args={{
       variant: 'outlined',
       disabled: false,
@@ -107,11 +116,11 @@ export const Template = args => {
   </Story>
 </Preview>
 
-#### Outlined (Disabled)
+### Outlined (Disabled)
 
 <Preview withToolbar>
   <Story
-    name="Outlined (disabled) Button"
+    name="Outlined (disabled)"
     args={{
       variant: 'outlined',
       disabled: true,
@@ -126,7 +135,7 @@ export const Template = args => {
 
 <Preview withToolbar>
   <Story
-    name="Text Button"
+    name="Text"
     args={{
       variant: 'text',
       disabled: false,
@@ -137,11 +146,11 @@ export const Template = args => {
   </Story>
 </Preview>
 
-#### Text (Disabled)
+### Text (Disabled)
 
 <Preview withToolbar>
   <Story
-    name="Text (disabled) Button"
+    name="Text (disabled)"
     args={{
       variant: 'text',
       disabled: true,
