@@ -3,13 +3,7 @@ import { Story, Meta } from "@storybook/web-components";
 
 import '../elements/Button';
 
-type IButtonVariant = "contained" | "outlined" | "text";
-
-interface IButton {
-  text: string
-  variant: IButtonVariant
-  disabled: boolean
-}
+import { IButton } from "../types/Button";
 
 export default {
   title: 'Design System/Components/Button',

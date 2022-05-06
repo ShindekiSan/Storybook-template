@@ -3,10 +3,7 @@ import { Story } from "@storybook/web-components";
 
 import '../elements/Input';
 
-interface IInput {
-  placeholder: string
-  borderColor: string
-}
+import { IInput } from '../types/Input';
 
 export default {
   title: 'Design System/Components/Input',

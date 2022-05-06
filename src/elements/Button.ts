@@ -1,7 +1,7 @@
 import { LitElement, html, css } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
-type IButtonVariant = "contained" | "outlined" | "text";
+import { IButtonVariant } from "../types/Button";
 
 @customElement('custom-button')
 export class CustomButton extends LitElement {
@@ -16,6 +16,7 @@ export class CustomButton extends LitElement {
       font-size: 24px;
       color: #ffffff;
       cursor: pointer;
+      transition: background-color 0.15s ease-in-out;
     }
     #outlined {
       border: 2px solid #4e8bfc;
@@ -27,6 +28,7 @@ export class CustomButton extends LitElement {
       background: none;
       color: #4e8bfc;
       cursor: pointer;
+      transition: background-color 0.15s ease-in-out;
     }
     #text {
       border: 2px solid;
@@ -38,6 +40,7 @@ export class CustomButton extends LitElement {
       background: none;
       color: #4e8bfc;
       cursor: pointer;
+      transition: background-color 0.15s ease-in-out;
     }
     #text:hover {
       background-color: rgba(78, 139, 252, 0.1);
