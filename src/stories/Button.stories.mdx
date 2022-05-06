@@ -1,0 +1,153 @@
+import { html } from 'lit';
+import { Meta, Preview, Story, ArgTypes } from '@storybook/addon-docs';
+
+import '../elements/Button';
+
+<Meta
+  title="Design System/Documentation"
+  component='custom-button'
+  argTypes={{
+    variant: {
+      description: 'Button styles preset',
+      type: { name: 'string', required: true },
+      options: ['contained', 'outlined', 'text'],
+      control: { type: 'select' },
+      table: {
+        type: { summary: ['"contained"', '"outlined"', '"text"'] }
+      },
+      defaultValue: { summary: '"contained"' },
+    },
+    text: {
+      description: 'Button text',
+      type: { name: 'string', required: true },
+      table: {
+        type: { summary: 'string' }
+      },
+      defaultValue: { summary: '' },
+    },
+    disabled: {
+      description: 'Disables button, so it is unavaliable for interacting',
+      type: { name: 'boolean' },
+      table: {
+        type: { summary: 'boolean' }
+      },
+      defaultValue: { summary: 'false' },
+    },
+  }}
+/>
+
+export const Template = args => {
+  if (args.disabled) {
+    return html`<custom-button variant=${args.variant} text=${args.text} disabled></custom-button>`
+  }
+  return html`<custom-button variant=${args.variant} text=${args.text}></custom-button>`
+}
+
+# Button
+
+`Button` is the primary component for user to interact with UI.
+
+<Preview withToolbar>
+  <Story
+    name="Button"
+    args={{
+      variant: 'contained',
+      disabled: false,
+      text: 'Click me!'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+## Examples
+
+### Contained
+
+<Preview withToolbar>
+  <Story
+    name="Contained Button"
+    args={{
+      variant: 'contained',
+      disabled: false,
+      text: 'Click me!'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+#### Contained (Disabled)
+
+<Preview withToolbar>
+  <Story
+    name="Contained (disabled) Button"
+    args={{
+      variant: 'contained',
+      disabled: true,
+      text: 'Click me!'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+### Outlined
+
+<Preview withToolbar>
+  <Story
+    name="Outlined Button"
+    args={{
+      variant: 'outlined',
+      disabled: false,
+      text: 'Click me!'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+#### Outlined (Disabled)
+
+<Preview withToolbar>
+  <Story
+    name="Outlined (disabled) Button"
+    args={{
+      variant: 'outlined',
+      disabled: true,
+      text: 'Click me!'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+### Text
+
+<Preview withToolbar>
+  <Story
+    name="Text Button"
+    args={{
+      variant: 'text',
+      disabled: false,
+      text: 'Click me!'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+#### Text (Disabled)
+
+<Preview withToolbar>
+  <Story
+    name="Text (disabled) Button"
+    args={{
+      variant: 'text',
+      disabled: true,
+      text: 'Click me!'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>

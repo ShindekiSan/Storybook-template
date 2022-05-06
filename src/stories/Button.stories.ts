@@ -3,9 +3,11 @@ import { Story, Meta } from "@storybook/web-components";
 
 import '../elements/Button';
 
+type IButtonVariant = "contained" | "outlined" | "text";
+
 interface IButton {
   text: string
-  variant: string
+  variant: IButtonVariant
   disabled: boolean
 }
 
