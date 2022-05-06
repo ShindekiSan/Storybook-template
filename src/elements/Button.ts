@@ -16,7 +16,7 @@ export class CustomButton extends LitElement {
       font-size: 24px;
       color: #ffffff;
       cursor: pointer;
-      transition: background-color 0.15s ease-in-out;
+      transition: 0.15s ease-in-out;
     }
     #outlined {
       border: 2px solid #4e8bfc;
@@ -28,7 +28,7 @@ export class CustomButton extends LitElement {
       background: none;
       color: #4e8bfc;
       cursor: pointer;
-      transition: background-color 0.15s ease-in-out;
+      transition: 0.15s ease-in-out;
     }
     #text {
       border: 2px solid;

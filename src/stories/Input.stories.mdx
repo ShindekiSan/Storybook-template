@@ -1,0 +1,109 @@
+import { html } from 'lit';
+import { Meta, Preview, Story, ArgsTable } from '@storybook/addon-docs';
+
+import '../elements/Input';
+
+<Meta
+  title="Design System/Documentation/Input"
+  component='custom-input'
+  argTypes={{
+    placeholder: {
+      description: "Background text",
+      type: { name: 'string', required: true },
+      table: {
+        type: { summary: 'string' }
+      },
+      defaultValue: { summary: '' },
+    },
+    borderColor: {
+      description: "The color of input borders",
+      defaultValue: { summary: '"primary"' },
+      options: ['primary', 'error', 'success', 'warning'],
+      control: { type: 'select' },
+      default: 'primary',
+      table: {
+        type: { summary: ['"primary"', '"error"', '"success"', '"warning"'] }
+      },
+    },
+  }}
+/>
+
+export const Template = args => html`<custom-input placeholder=${args.placeholder} borderColor=${args.borderColor}></custom-input>`;
+
+# Input
+
+`Input` **element is used to create interactive controls for web-based forms in order to accept data from the user.**
+
+<Preview withToolbar>
+  <Story
+    name="Default"
+    args={{
+      placeholder: 'Text something...',
+      borderColor: 'primary'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+## Properties
+
+<ArgsTable story="Default" />
+
+## Examples
+
+### Primary
+
+<Preview withToolbar>
+  <Story
+    name="Color/Primary"
+    args={{
+      placeholder: 'Text something...',
+      borderColor: 'primary'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+### Error
+
+<Preview withToolbar>
+  <Story
+    name="Color/Error"
+    args={{
+      placeholder: 'Text something...',
+      borderColor: 'error'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+### Success
+
+<Preview withToolbar>
+  <Story
+    name="Color/Success"
+    args={{
+      placeholder: 'Text something...',
+      borderColor: 'success'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
+
+### Warning
+
+<Preview withToolbar>
+  <Story
+    name="Color/Warning"
+    args={{
+      placeholder: 'Text something...',
+      borderColor: 'warning'
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Preview>
